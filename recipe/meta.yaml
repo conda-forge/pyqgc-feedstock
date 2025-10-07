@@ -1,5 +1,5 @@
 {% set name = "pyqgc" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyqgc-{{ version }}.tar.gz
-  sha256: 6e9387dea06d07bc7b7d23bdddbe4f22f7b7fb823972e573161828537e45d9a6
+  sha256: 6e0988aa64c763735340e557739376f5dc45d0e8beabda6428c89a70fbffeb7a
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
@@ -22,6 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - pynmeagps >=1.0.54
+    - pyrtcm >=1.1.9
 
 test:
   imports:
